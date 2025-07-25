@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+US+Trad:wght@100..400&display=swap');
+/*Font: Playwrite US Trad*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+/*Font: DM Sans*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*Font: Poppins*/
+
+/*desktop*/
+
+html{
+    background-image: url(../imagens/fundomenu.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#logo{
+    width: 9%;
+    height: 4%;
+    padding-left: 1%;
+    padding-bottom: 4%;
+}
+
+#tx1,#tx2{
+    color: #dda0ef;
+    text-align: center;
+}
+
+#tx1{
+    font-family: 'DM Sans', sans-serif;
+    font-size: 60px;
+    margin-bottom: 0px;
+}
+#tx2{
+    font-family: 'Playwrite US Trad', sans-serif;
+    font-size: 35px;
+    margin-top: 0px;
+}
+
+.botao,.botao1{
+    text-decoration: none;
+    font-family: 'Poppins',sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#cadastro{
+    border: none;
+    border-radius: 20px;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+#cadastro,#login{
+    margin-left: 3%;
+}
+
+#vazio{
+    opacity: 0;
+}
+
+.botao1{
+    color: #2a23e0;
+}
+
+#cadastro{
+    background-image: linear-gradient(to right,#cfc7ff, #a600ff);
+}
+
+.botao{
+    color: white;
+}
+
+#login{
+    border: none;
+    border-radius: 20px;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+#botoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tx3{
+    color: #dda0ef;
+    font-family: 'Poppins',sans-serif;
+    font-weight: lighter;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 5%;
+}
+
+#creditos{
+    color: #dda0ef;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    padding-right: 4%;
+}
+
+#menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
