@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link href="style.css" rel="stylesheet">
+    <style>
+    #container {
+      position: relative;
+      height: 100px;
+      overflow: hidden;
+    }
+
+    #textoprincipal {
+      animation: subir 1s forwards;
+      animation-delay: 2s;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    #textosecundario {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: aparecer 1s forwards;
+      animation-delay: 3s;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    @keyframes subir {
+      to {
+        transform: translateY(-40px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes aparecer {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    </style> 
+</head>
+<body>
+    <!--O style que consta antes do head, é apenas para animação!-->
+    <div id="menu">
+            <img src="../imagens/logo1.png" alt="logo" id="logo">
+        </div>
+    <div id="container">
+    <div id="textoprincipal">
+    <h1 id="tx1">Olá! Seja bem-vindo(a) ao Habitus</h1></div>
+    <div id="textosecundario">Testando animação para ver se deu certo</div>
+    </div>
+</body>
+</html>
