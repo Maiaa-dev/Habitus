@@ -5,9 +5,100 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /*Font: Poppins*/
 
-#logo{
+html{
+    background-image: url(../imagens/fundocadastro.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#logo{  
     width: 8%;
     height: 3%;
     padding-left: 1%;
     padding-bottom: 4%;
+}
+
+#textoprincipal{
+    color: #2a23e0;
+    font-family: 'DM Sans',sans-serif;
+    font-size: 25px;
+} 
+
+#decoracao{
+    font-family: 'Playwrite US Trad', sans-serif;
+}
+
+#dec1{
+    font-weight: normal;
+}
+
+#seta{
+   padding-left: 48%;
+}
+
+#tx2{
+    color: #2a23e0;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: normal;
+    font-size: 28px;
+    font-style: italic;
+}
+
+input{
+    background-color: white;
+    border: 4px solid #7e7af5;
+    border-radius: 20px;
+    padding-left: 6px;
+    padding-right: 50px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+label{
+    font-family: 'Poppins',sans-serif;
+    font-weight: bold;
+    color: #2a23e0;
+    font-size: 20px;
+}
+
+#botao{
+    font-size: 20px;
+    color: #ebeaff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    background-color: #2a23e0;
+    border: 4px solid #2a23e0;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    margin-left: 30%;
+}
+#menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#login{
+    margin-right: 4%;
+    color: #2a23e0;
+    background-color: #d2d1f4;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border: 4px solid #d2d1f4;
+    border-radius: 20px;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    font-size: 19px;
+}
+
+a{
+    text-decoration: none;
+    color: #2a23e0;
 }

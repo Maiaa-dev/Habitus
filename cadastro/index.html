@@ -8,26 +8,26 @@
     <style>
     #container {
       position: relative;
-      height: 100px;
+      height: 400px;
       overflow: hidden;
     }
 
     #textoprincipal {
       animation: subir 1s forwards;
-      animation-delay: 2s;
+      animation-delay: 3s;
       position: absolute;
       top: 0;
-      left: 0;
+      left: 21%;
     }
 
     #textosecundario {
       opacity: 0;
       transform: translateY(20px);
-      animation: aparecer 1s forwards;
-      animation-delay: 3s;
+      animation: aparecer 2s forwards;
+      animation-delay: 4s;
       position: absolute;
       top: 0;
-      left: 0;
+      left: 32%;
     }
 
     @keyframes subir {
@@ -49,11 +49,32 @@
     <!--O style que consta antes do head, é apenas para animação!-->
     <div id="menu">
             <img src="../imagens/logo1.png" alt="logo" id="logo">
-        </div>
+            <button type="button" id="login"><a href="../login/index.html" target="_blank" >Login</a></button>
+    </div>
     <div id="container">
     <div id="textoprincipal">
-    <h1 id="tx1">Olá! Seja bem-vindo(a) ao Habitus</h1></div>
-    <div id="textosecundario">Testando animação para ver se deu certo</div>
+    <h1 id="tx1"><span id="decoracao">Olá,</span> <span id="dec1">bem-vindo(a) ao</span> Habitus! 💜</h1>
+    <img src="../imagens/seta.png" id="seta">
+    </div>
+    <div id="textosecundario">
+      <h2 id="tx2">> Preencha os dados abaixo:</h2><br>
+      <form action="" method="post">
+      <label for="nome"><img src="../imagens/user.png"> Nome:  </label>
+      <input type="text" name="nome" id="nome"><br>
+      <br>
+      <label for="email"><img src="../imagens/email.png"> Seu melhor Email:  </label>
+      <input type="email" name="email" id="email"><br>
+      <br>
+      <label for="criesenha"><img src="../imagens/cadeado.png"> Crie uma senha:  </label>
+      <input type="password" name="criesenha" id="criesenha"><br>
+      <br>
+      <label for="confisenha">Confirme a sua senha:  </label>
+      <input type="password" name="confisenha" id="confisenha"><br>
+        <br>
+        <br>
+      <button type="submit" id="botao">Cadastrar-se</button>
+      </form>
+    </div>
     </div>
 </body>
 </html>
