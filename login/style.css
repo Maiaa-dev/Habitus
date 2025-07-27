@@ -12,31 +12,72 @@ html{
 }
 
 #logo{
-    width: 9%;
-    height: 4%;
+    width: 6%;
+    height: 1%;
     padding-left: 1%;
     padding-bottom: 4%;
 }
 
-#parte1{
-    font-family: 'Poppins',sans-serif;
-    color: white;
+input{
+    background-color: white;
+    border: 4px solid #2a23e0;
+    border-radius: 20px;
+    padding-left: 6px;
+    padding-right: 50px;
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
 
-#tx1{
+label{
+    font-family: 'Poppins',sans-serif;
     font-weight: normal;
-    margin-bottom: 0px;
+    color: #7e7af5;
+    font-size: 15px;
 }
 
-#tx2{
-    margin-top: 0px;
+#botao{
+    font-size: 20px;
+    color: #ebeaff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    padding-left: 16%;
+    padding-right: 16%;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    background-color: #2a23e0;
+    border: 4px solid #2a23e0;
+    border-radius: 20px;
 }
 
-#tx3{
+a{
     font-family: 'Poppins',sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    color: #7e7af5;
+    font-size: 12px;
+}
+
+a:hover{
     color: #2a23e0;
 }
 
+#parte1{
+    background-color: white;
+    border: 5px solid white;
+    border-radius: 30px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
 
+#conteudo{
+    text-align: center;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 4%;
+    padding-top: 4%;
+}
 
-
+#tx1{
+    font-family: 'Poppins',sans-serif;
+    color: #2a23e0;
+}
