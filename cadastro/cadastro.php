@@ -1,5 +1,5 @@
 <?php 
-    include_once('../conexao.php');
+    include_once('../conexao.php'); //Inclui esse arquivo apenas 1 vez - Ignora a partir da segunda
 
     $nome = $_POST['nome'];
     $email = $_POST['email'];
