@@ -7,9 +7,64 @@
 
 html{
     background-image: url(../imagens/fundologin.png);
-    background-size: cover;
     background-repeat: no-repeat;
 }
+
+input{
+    background-color: white;
+    border: 4px solid #2a23e0;
+    border-radius: 20px;
+}
+
+label{
+    font-family: 'Poppins',sans-serif;
+    font-weight: normal;
+    color: #7e7af5;
+}
+
+a{
+    font-family: 'Poppins',sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    color: #7e7af5;
+}
+
+a:hover{
+    color: #2a23e0;
+}
+
+#botao{
+    color: #ebeaff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    background-color: #2a23e0;
+    border: 4px solid #2a23e0;
+    border-radius: 20px;
+}
+
+#parte1{
+    background-color: white;
+    border: 5px solid white;
+    border-radius: 30px;
+}
+
+#conteudo{
+    text-align: center;
+}
+
+#tx1{
+    font-family: 'Poppins',sans-serif;
+    color: #2a23e0;
+}
+/*Para desktop*/
+@media screen and (min-width: 1094px){
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 
 #logo{
     width: 6%;
@@ -19,9 +74,6 @@ html{
 }
 
 input{
-    background-color: white;
-    border: 4px solid #2a23e0;
-    border-radius: 20px;
     padding-left: 6px;
     padding-right: 50px;
     padding-top: 6px;
@@ -29,55 +81,115 @@ input{
 }
 
 label{
-    font-family: 'Poppins',sans-serif;
-    font-weight: normal;
-    color: #7e7af5;
     font-size: 15px;
 }
 
 #botao{
     font-size: 20px;
-    color: #ebeaff;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
     padding-left: 16%;
     padding-right: 16%;
     padding-bottom: 3px;
     padding-top: 3px;
-    background-color: #2a23e0;
-    border: 4px solid #2a23e0;
-    border-radius: 20px;
 }
 
 a{
-    font-family: 'Poppins',sans-serif;
-    font-weight: bold;
-    text-decoration: none;
-    color: #7e7af5;
     font-size: 12px;
 }
 
-a:hover{
-    color: #2a23e0;
-}
-
 #parte1{
-    background-color: white;
-    border: 5px solid white;
-    border-radius: 30px;
     margin-left: 30%;
     margin-right: 30%;
 }
 
 #conteudo{
-    text-align: center;
     padding-left: 2%;
     padding-right: 2%;
     padding-bottom: 4%;
     padding-top: 4%;
 }
-
-#tx1{
-    font-family: 'Poppins',sans-serif;
-    color: #2a23e0;
 }
+
+/*Para tablet*/
+
+@media screen and (min-width:542px) and (max-width: 1093px){
+    html{
+        display: flex;
+        background-size: cover;
+    }
+    #logo{
+        width: 20%;
+        height: 15%;
+        padding-left: 2%;
+    }
+    #parte1{
+        margin-top: 20%;
+        margin-bottom: 52%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    #conteudo{
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+    #botao{
+        font-size: 20px;
+        padding-left: 16%;
+        padding-right: 16%;
+        padding-bottom: 3px;
+        padding-top: 3px;
+    }
+    input{
+        padding-left: 8%;
+        padding-bottom: 2%;
+        padding-right: 8%;
+        padding-top: 2%;
+    }
+    label{
+        font-size: 20px;
+    }
+    #tx1{
+        font-size: 35px;
+    }
+}
+
+/*Para mobile - 100% concluído*/
+
+@media screen and (max-width: 541px){
+    html{
+        display: flex;
+        background-size: cover;
+
+    }
+    #logo{
+        width: 20%;
+        height: 15%;
+        padding-left: 2%;
+    }
+    #parte1{
+        margin-top: 20%;
+        margin-bottom: 60%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    #conteudo{
+        padding-top: 7%;
+        padding-bottom: 7%;
+    }
+    label{
+        font-size: 20px;
+    }
+    input{
+        padding-left: 3%;
+        padding-bottom: 2%;
+        padding-right: 3%;
+        padding-top: 2%;
+    }
+    #botao{
+    font-size: 20px;
+    padding-left: 16%;
+    padding-right: 16%;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    }
+}
+

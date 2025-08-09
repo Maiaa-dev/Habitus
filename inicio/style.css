@@ -13,6 +13,12 @@ html{
     background-repeat: no-repeat;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 #logo{
     width: 9%;
     height: 4%;
