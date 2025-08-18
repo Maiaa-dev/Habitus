@@ -17,7 +17,7 @@
             $_SESSION['nome'] = $usuario['nome'];
             $_SESSION['genero'] = $usuario['genero'];
             $_SESSION['status'] = $usuario['status_conta'];
-            header("Location: ../menu/index.html");
+            header("Location: ../menu/index.php");
             exit;
         }
     else{

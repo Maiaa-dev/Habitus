@@ -1,3 +1,16 @@
+<?php 
+    session_start();
+    include_once('../conexao.php');
+    include_once('../usuario.php');
+
+     if (!isset ($_SESSION['email'])){
+        header("Location: ../login/index.html");
+        exit;
+    }
+    else{
+        $nome = $_SESSION['nome'];
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,7 +27,7 @@
         <header>
             <nav class="navbar fixed-top navbar-expand-lg bg-body-transparent">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html"><img src="../imagens/logo1.png" id="logop" alt="Logo"></a>
+                    <a class="navbar-brand" href="index.php"><img src="../imagens/logo4.png" id="logop" alt="Logo"></a>
                  
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -34,7 +47,7 @@
                         <a class="nav-link" href="#">Perguntas frequentes</a>
                       </li>
                     </ul>
-                      <a class="nav-link" href="#"><button type="submit" id="botao">Olá, Aline!</button></a>
+                      <a class="nav-link" href="#"><button type="submit" id="botao" class="dados"> <?php echo $nome?></button></a>
                   </div>
                 </div>
               </nav>
