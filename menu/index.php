@@ -47,7 +47,7 @@
                         <a class="nav-link" href="#">Perguntas frequentes</a>
                       </li>
                     </ul>
-                      <a class="nav-link" href="#"><button type="submit" id="botao" class="dados"> <?php echo $nome?></button></a>
+                      <a class="nav-link" href="#"><button type="submit" id="botao" class="dados"><img src="../imagens/user2.png" id="user1"><img src="../imagens/user.png" id="user2">   <?php echo $nome?></button></a>
                   </div>
                 </div>
               </nav>
@@ -59,10 +59,10 @@
 
           </div>
           <div id="criarhabito">
-              
+              <a href="../criar/index.html"><button type="button" id="criarh">Criar hábito</button></a>
           </div>
           <div id="seushabitos">
-
+              
           </div>
           <div id="frase">
 
