@@ -29,7 +29,7 @@ body{
 }
 
 #comeco,.nav-link{
-    color: #fff3b0;
+    color: #f2defd;
     transition: 0.5s;
     font-size: 15px;
 }
@@ -87,4 +87,75 @@ body{
 
 #botao:hover #user2{
     display: block;
+}
+
+#principal{
+    margin-top: 10%;
+    display: flex;      /* Coloca as divs lado a lado */
+    gap: 20px;          /* Espaço entre elas */
+    /*margin: 20px;*/       /* Espaço externo */
+}
+
+#esquerda,#direita {
+  flex: 1;            /* Faz cada div ocupar o mesmo espaço */
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+}
+
+#frase{
+    background-color: #270a6b;
+    border: 2px solid #270a6b;
+    border-radius: 45px;
+    margin-top: 10%;
+}
+
+#seunome{
+    font-weight:normal;
+    font-style: italic;
+    font-family: 'DM Sans',sans-serif;
+}
+
+#apre{
+    font-size: 50px;
+    color: #3906b3;
+}
+
+#pergunta{
+    font-family: 'DM Sans',sans-serif;
+    color: #270a6b;
+}
+
+#criarhabito{
+    padding-top: 2%;
+}
+
+#criarh{
+    padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-weight: bold;
+    font-size: 20px;
+    color: #270a6b;
+    background-color: #eee6f7;
+    border: 3px solid #eee6f7;
+    border-radius: 25px;
+}
+
+#adicao{
+    background-color: #8372f8;
+    border: 2px solid #8372f8;
+    border-radius: 100%;
+}
+
+#motiva{
+    font-size: 25px;
+    font-family: 'DM Sans',sans-serif;
+    font-style: italic;
+}
+
+#seushabitos{
+    background-color: #503fc2;
 }

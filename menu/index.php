@@ -55,18 +55,25 @@
         </div>
 
         <div id="principal">
+          <div id="esquerda">
           <div id="apresentacao">
-
+              <h1 id="apre">Olá, <span id="seunome"><?php echo $nome?></span>!</h1>
+              <h2 id="pergunta">Como está o seu dia hoje?</h2>
           </div>
           <div id="criarhabito">
-              <a href="../criar/index.html"><button type="button" id="criarh">Criar hábito</button></a>
+              <a href="../criar/index.html"><button type="button" id="criarh"><img src="../imagens/adicao.png" id="adicao">  Criar hábito</button></a>
           </div>
-          <div id="seushabitos">
-              
-          </div>
+          
           <div id="frase">
-
+              <h3 id="motiva">"Se a vida é feita de hábitos, que sejam bons hábitos."</h3>
           </div>
+          </div>
+          <div id="direita">
+          <div id="seushabitos">
+              <h1>Seus hábitos:</h1>
+          </div>
+          </div>
+          
 
         </div>
 </body>
