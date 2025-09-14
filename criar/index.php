@@ -16,7 +16,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <title>Criar hábito</title>
     <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
     <script src="../bootstrap/js/bootstrap.js" async></script>
     <link href="style.css" rel="stylesheet">
@@ -54,27 +54,15 @@
             </header>
         </div>
 
-        <div id="principal">
-          <div id="esquerda">
-          <div id="apresentacao">
-              <h1 id="apre">Olá, <span id="seunome"><?php echo $nome?></span>!</h1>
-              <h2 id="pergunta">Como está o seu dia hoje?</h2>
-          </div>
-          <div id="criarhabito">
-              <a href="../criar/index.php"><button type="button" id="criarh"><img src="../imagens/adicao.png" id="adicao">  Criar hábito</button></a>
-          </div>
-          
-          <div id="frase">
-              <h3 id="motiva">"Se a vida é feita de hábitos, que sejam bons hábitos."</h3>
-          </div>
-          </div>
-          <div id="direita">
-          <div id="seushabitos">
-              <h1>Seus hábitos:</h1>
-          </div>
-          </div>
-          
-
+        <div id="parte1">
+          <h1 id="tx1">Escolha um novo hábito:</h1>
+          <form action="primparte.php" method="post">
+            <input type="radio" name="habito" value="hidratacao"> Consumo de água<br>
+            <input type="radio" name="habito" value="leitura"> Leitura<br>
+            <input type="radio" name="habito" value="caminhada"> Caminhada<br>
+            <input type="submit" value="Enviar">
+          </form>
         </div>
+    </div>
 </body>
 </html>
