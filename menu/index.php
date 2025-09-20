@@ -38,7 +38,7 @@
                         <a class="nav-link active" id="comeco" href="#inicio">Início</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Criar novo hábito</a>
+                        <a class="nav-link" href="../criar/index.php">Criar novo hábito</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#">Seus hábitos</a>

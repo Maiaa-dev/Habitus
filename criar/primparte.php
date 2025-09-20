@@ -1,9 +1,9 @@
 <?php 
-    if (isset($_POST['habito'])) {
-        $habitoescolhido = $_POST['habito'];
-        echo "Você escolheu: " . $habitoescolhido;
+    if (isset($_POST['meta'])) {
+        $metaescolhida = $_POST['meta'];
+        echo "Você escolheu: " . $metaescolhida;
     } 
-    else {
-        echo "Nenhuma habito foi selecionado.";
+    else{
+        echo "Nenhuma meta selecionada";
     }
 ?>
