@@ -104,11 +104,13 @@ body{
 }
 
 .inativa{
+    display: grid;
+    gap: .5rem;
     display: none;
+    padding-bottom: 10%;
 }
 
 #radiosList{
-
     text-align: center;
     padding-top: 10%;
 }
@@ -136,11 +138,39 @@ body{
     
 }*/
 
+#criarbt{
+    color: #eee6f7;
+    font-size: 20px;
+    background-color: #270a6b;
+    font-weight: bold;
+    border: 4px solid #270a6b;
+    border-radius: 20px;
+    transition: 0.5s;
+    display: flex;
+    padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+#pcriar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#criarbt:hover{
+    background-color: #4a05ed;
+    border-color: #4a05ed;
+    transition: 0.5s;
+    position: relative;
+    display: flex;
+}
+
 .rounded-3{
     border-radius: .5rem !important;
 }
 
-#tx1{
+.tx1{
     font-family: 'DM Sans',sans-serif;
     color: #4a05ed;
     background-color: white;
@@ -152,7 +182,7 @@ body{
     padding-bottom: 2%;
 }
 
-#novo{
+.novo{
     font-weight: bold;  
     font-family: 'Playwrite US Trad', sans-serif;
 }

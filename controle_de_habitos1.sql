@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11/08/2025 às 23:51
+-- Tempo de geração: 20/09/2025 às 21:16
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -24,17 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `categorias`
---
-
-CREATE TABLE `categorias` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Estrutura para tabela `execucoes_tarefas`
 --
 
@@ -51,16 +40,34 @@ CREATE TABLE `execucoes_tarefas` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `rotinas`
+-- Estrutura para tabela `habitos`
 --
 
-CREATE TABLE `rotinas` (
-  `id_rotina` int(11) NOT NULL,
-  `usuario_id` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `descricao` text DEFAULT NULL,
-  `ativa` tinyint(1) DEFAULT 1,
-  `criada_em` timestamp NOT NULL DEFAULT current_timestamp()
+CREATE TABLE `habitos` (
+  `id_habito` int(20) NOT NULL,
+  `nome_habito` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `habitos`
+--
+
+INSERT INTO `habitos` (`id_habito`, `nome_habito`) VALUES
+(1, 'hidratacao'),
+(2, 'leitura'),
+(3, 'caminhada'),
+(4, 'rotina do sono');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `habito_usuario`
+--
+
+CREATE TABLE `habito_usuario` (
+  `id_usuario` int(11) NOT NULL,
+  `id_habito` int(11) NOT NULL,
+  `criado_em` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -109,18 +116,12 @@ INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `senha_hash`, `genero`, `c
 (9, 'João', 'joao@gmail.com', '$2y$10$tN0ABPf/EG6cyIMaUYgv7eVelkyu/eHeQC1svOP7zJ6Ik9U1KE9hu', NULL, '2025-07-26 22:45:25', '2025-07-26 22:45:25', 'ativo'),
 (10, 'Clark', 'clark@gmail.com', '$2y$10$kl19u7qxKMGrUdrkJefqquTMnVPtOpqscvyHZIzV8mebxeMhVZLx2', NULL, '2025-07-27 15:20:06', '2025-07-27 15:20:06', 'ativo'),
 (11, 'Maria Luisa', 'malu@gmail.com', '$2y$10$1llzzW8jsRYLkiplTKIGF.kUZCXwiTDCXLfYhDMKqZjSpxb/QJvo.', NULL, '2025-07-27 22:24:15', '2025-07-27 22:24:15', 'ativo'),
-(12, 'Flávio', 'flavio@gmail.com', '$2y$10$7WhFeKBQd04C4/dQIpoyCezLKEtKYXMNf519oJtvJldoLKxmG80a2', NULL, '2025-07-27 22:28:07', '2025-07-27 22:28:07', 'ativo');
+(12, 'Flávio', 'flavio@gmail.com', '$2y$10$7WhFeKBQd04C4/dQIpoyCezLKEtKYXMNf519oJtvJldoLKxmG80a2', NULL, '2025-07-27 22:28:07', '2025-07-27 22:28:07', 'ativo'),
+(13, 'Helena', 'helena@gmail.com', '$2y$10$pLj0UpaQ4vOEqkHHeX/IY.UAKmXykFVwO9PEz1z9fqSGHpFcu2DOS', NULL, '2025-09-03 00:55:20', '2025-09-03 00:55:20', 'ativo');
 
 --
 -- Índices para tabelas despejadas
 --
-
---
--- Índices de tabela `categorias`
---
-ALTER TABLE `categorias`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `nome` (`nome`);
 
 --
 -- Índices de tabela `execucoes_tarefas`
@@ -131,11 +132,17 @@ ALTER TABLE `execucoes_tarefas`
   ADD KEY `usuario_id` (`usuario_id`);
 
 --
--- Índices de tabela `rotinas`
+-- Índices de tabela `habitos`
 --
-ALTER TABLE `rotinas`
-  ADD PRIMARY KEY (`id_rotina`),
-  ADD KEY `usuario_id` (`usuario_id`);
+ALTER TABLE `habitos`
+  ADD PRIMARY KEY (`id_habito`);
+
+--
+-- Índices de tabela `habito_usuario`
+--
+ALTER TABLE `habito_usuario`
+  ADD KEY `id_usuario` (`id_usuario`),
+  ADD KEY `id_habito` (`id_habito`);
 
 --
 -- Índices de tabela `tarefas`
@@ -156,22 +163,16 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de tabela `categorias`
---
-ALTER TABLE `categorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de tabela `execucoes_tarefas`
 --
 ALTER TABLE `execucoes_tarefas`
   MODIFY `id_executaf` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `rotinas`
+-- AUTO_INCREMENT de tabela `habitos`
 --
-ALTER TABLE `rotinas`
-  MODIFY `id_rotina` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `habitos`
+  MODIFY `id_habito` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `tarefas`
@@ -183,7 +184,7 @@ ALTER TABLE `tarefas`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Restrições para tabelas despejadas
@@ -197,10 +198,11 @@ ALTER TABLE `execucoes_tarefas`
   ADD CONSTRAINT `execucoes_tarefas_ibfk_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id_usuario`);
 
 --
--- Restrições para tabelas `rotinas`
+-- Restrições para tabelas `habito_usuario`
 --
-ALTER TABLE `rotinas`
-  ADD CONSTRAINT `rotinas_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE;
+ALTER TABLE `habito_usuario`
+  ADD CONSTRAINT `habito_usuario_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`),
+  ADD CONSTRAINT `habito_usuario_ibfk_2` FOREIGN KEY (`id_habito`) REFERENCES `habito` (`id_habito`);
 
 --
 -- Restrições para tabelas `tarefas`

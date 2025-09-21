@@ -63,7 +63,8 @@
         </div>
         <div id="tudojunto" class="d-flex flex-column flex-md-row gap-4 align-items-center justify-content-center">
         <div class="list-group w-50 gap-4 align-items-center justify-content-center" id="radiosList" >
-          <h1 id="tx1">Escolha um <span id="novo">novo</span> hábito:</h1>
+          <h1 class="tx1">Escolha um <span class="novo">novo</span> hábito:</h1>
+          <form action="primparte.php" method="post">
             <div id="escolhas" class="ativa d-grid gap-2">
               <div class="opcao">
               <input type="radio" name="habito" value="hidratacao" class="btn-check" id="lgRadio1" autocomplete="off">
@@ -92,92 +93,108 @@
               </div>
               </label>
               </div>
-            </div>
+            </div><br>
         
             <div id="div-hidratacao" class="inativa">
-              <h1 id="tx2">Escolha uma meta:</h1>
+              <div class="d-grid gap-2">
+              <h1 class="tx1">Escolha uma <span class="novo">meta</span>:</h1>
               <div class="opcao">
-              <input type="radio" name="meta" value="1L" class="btn-check" id="lgRadio4" autocomplete="off">
-              <label class="list-group-item list-group-item-action d-flex gap-2 align-items-start" for="lgRadio4" role="button">
+              <input type="radio" name="meta" value="1L" class="btn-check" id="lgRadio4" autocomplete="off" required>
+              <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center rounded-3" for="lgRadio4" role="button">
               <div>
                 <strong>1 litro</strong>
               </div>
               </label>
               </div>
               <div class="opcao">
-              <input type="radio" name="meta" value="2L" class="btn-check" id="lgRadio5" autocomplete="off">
-              <label class="list-group-item list-group-item-action d-flex gap-2 align-items-start" for="lgRadio5" role="button">
+              <input type="radio" name="meta" value="2L" class="btn-check" id="lgRadio5" autocomplete="off" required>
+              <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center rounded-3" for="lgRadio5" role="button">
               <div>
                 <strong>2 litros</strong>
               </div>
               </label>
               </div>
               <div class="opcao">
-              <input type="radio" name="meta" value="2.5L" class="btn-check" id="lgRadio6" autocomplete="off">
-              <label class="list-group-item list-group-item-action d-flex gap-2 align-items-start" for="lgRadio6" role="button">
+              <input type="radio" name="meta" value="2.5L" class="btn-check" id="lgRadio6" autocomplete="off" required>
+              <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center rounded-3" for="lgRadio6" role="button">
               <div>
                 <strong>2,5 litros</strong>
               </div>
               </label>
               </div>
+              </div><br>
+              <div id="pcriar">
+                <button type="submit" id="criarbt">Criar</button>
+              </div>
             </div>
+
             <div id="div-leitura" class="inativa">
-              <h1 id="tx2">Escolha uma meta:</h1>
+              <div class="d-grid gap-2">
+              <h1 class="tx1">Escolha uma <span class="novo">meta</span>:</h1>
               <div class="opcao">
-                <input type="radio" name="meta" value="15min" class="btn-check" id="lgRadio7" autocomplete="off"> 
-                <label class="list-group-item list-group-item-action d-flex gap-2 align-items-start" for="lgRadio7" role="button">
+                <input type="radio" name="meta" value="15min" class="btn-check" id="lgRadio7" autocomplete="off" required> 
+                <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center rounded-3" for="lgRadio7" role="button">
                 <div>
                   <strong>15 minutos</strong>
                 </div>
                 </label>
               </div>
               <div class="opcao">
-                <input type="radio" name="meta" value="20min" class="btn-check" id="lgRadio8" autocomplete="off">
-                <label class="list-group-item list-group-item-action d-flex gap-2 align-items-start" for="lgRadio8" role="button">
+                <input type="radio" name="meta" value="20min" class="btn-check" id="lgRadio8" autocomplete="off" required>
+                <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center rounded-3" for="lgRadio8" role="button">
                 <div>
                   <strong>20 minutos</strong>
                 </div>
                 </label>
               </div>
               <div class="opcao">
-                <input type="radio" name="meta" value="30min" class="btn-check" id="lgRadio9" autocomplete="off"> 
-                <label class="list-group-item list-group-item-action d-flex gap-2 align-items-start" for="lgRadio9" role="button">
+                <input type="radio" name="meta" value="30min" class="btn-check" id="lgRadio9" autocomplete="off" required> 
+                <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center rounded-3" for="lgRadio9" role="button">
                 <div>
                   <strong>30 minutos</strong>
                 </div>
                 </label>
+              </div>
+              </div><br>
+              <div id="pcriar">
+                <button type="submit" id="criarbt">Criar</button>
               </div>
             </div>
+
             <div id="div-caminhada" class="inativa">
-              <h1 id="tx2">Escolha uma meta:</h1>
+              <div class="d-grid gap-2">
+              <h1 class="tx1">Escolha uma <span class="novo">meta</span>:</h1>
               <div class="opcao">
-                <input type="radio" name="meta" value="30min" class="btn-check" id="lgRadio10" autocomplete="off">
-                <label class="list-group-item list-group-item-action d-flex gap-2 align-items-start" for="lgRadio10" role="button">
+                <input type="radio" name="meta" value="30min" class="btn-check" id="lgRadio10" autocomplete="off" required>
+                <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center rounded-3" for="lgRadio10" role="button">
                 <div>
                   <strong>30 minutos</strong>
                 </div>
                 </label>
               </div>
               <div class="opcao">
-                <input type="radio" name="meta" value="35min" class="btn-check" id="lgRadio11" autocomplete="off">
-                <label class="list-group-item list-group-item-action d-flex gap-2 align-items-start" for="lgRadio11" role="button">
+                <input type="radio" name="meta" value="35min" class="btn-check" id="lgRadio11" autocomplete="off" required>
+                <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center rounded-3" for="lgRadio11" role="button">
                 <div>
                   <strong>35 minutos</strong>
                 </div>
                 </label>
               </div>
               <div class="opcao">
-                <input type="radio" name="meta" value="40min" class="btn-check" id="lgRadio12" autocomplete="off">
-                <label class="list-group-item list-group-item-action d-flex gap-2 align-items-start" for="lgRadio12" role="button">
+                <input type="radio" name="meta" value="40min" class="btn-check" id="lgRadio12" autocomplete="off" required>
+                <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center rounded-3" for="lgRadio12" role="button">
                 <div>
                   <strong>40 minutos</strong>
                 </div>
                 </label>
+              </div><br>
+              <div id="pcriar">
+                <button type="submit" id="criarbt">Criar</button>
               </div>
-              
-              
-              
+              </div>
+            
             </div>
+          </form>
         </div>
         </div>
     </div>
