@@ -71,7 +71,7 @@
               <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center rounded-3" for="lgRadio1" role="button">
               <div>
                 <strong>Consumo de água</strong>
-                <small class="d-block text-body-secondary">With support text underneath to add more detail</small>
+                <p class="parag">Você sabia que o corpo humano é composto de aproximadamente 70% de água?</p> 
               </div>
               </label>
               </div>
@@ -80,7 +80,7 @@
               <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center rounded-3" for="lgRadio2" role="button">
               <div>
                 <strong>Leitura</strong>
-                <small class="d-block text-body-secondary">With support text underneath to add more detail</small>
+                <p class="parag">“A leitura é o caminho mais curto para o conhecimento.” — Aristóteles</p> 
               </div>
               </label>
               </div>
@@ -89,7 +89,7 @@
               <label class="list-group-item list-group-item-action d-flex gap-2 align-items-center rounded-3" for="lgRadio3" role="button">
               <div>
                 <strong>Caminhada</strong>
-                <small class="d-block text-body-secondary">With support text underneath to add more detail</small>
+                <p class="parag">“A jornada mais longa começa com um único passo.” — Lao Tsé</p> 
               </div>
               </label>
               </div>

@@ -108,7 +108,7 @@ body{
 #frase{
     background-color: #270a6b;
     border: 2px solid #270a6b;
-    border-radius: 45px;
+    border-radius: 20px;
     margin-top: 10%;
 }
 
@@ -154,9 +154,12 @@ body{
 #motiva{
     font-size: 25px;
     font-family: 'DM Sans',sans-serif;
-    font-style: italic;
+    padding: 2%;
 }
 
 #seushabitos{
     background-color: #503fc2;
+    border: 2px solid #503fc2;
+    border-radius: 20px;
+    padding: 2%;
 }

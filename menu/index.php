@@ -2,6 +2,7 @@
     session_start();
     include_once('../conexao.php');
     include_once('../usuario.php');
+    include_once('../criar/primparte.php');
 
      if (!isset ($_SESSION['email'])){
         header("Location: ../login/index.html");
@@ -9,6 +10,9 @@
     }
     else{
         $nome = $_SESSION['nome'];
+        $idUsuario = $_SESSION['id'];
+        $sql = "SELECT h.nome_habito FROM habitos h, habito_usuario hu WHERE h.id_habito=hu.id_habito and id_usuario = '$idUsuario'";
+        $resultado = mysqli_query($conexao,$sql); //armazena o resultado da consulta anterior
     }
 ?>
 <!DOCTYPE html>
@@ -71,6 +75,20 @@
           <div id="direita">
           <div id="seushabitos">
               <h1>Seus hábitos:</h1>
+              <?php 
+                $nomesHabitos = [];
+                if (mysqli_num_rows($resultado) > 0){
+                while($dados = mysqli_fetch_assoc($resultado)){
+                    $nomesHabitos[] = $dados['nome_habito'];
+                }
+                    $tamanhoHabitos = count($nomesHabitos);
+
+                    for($i = 0; $i < $tamanhoHabitos;$i++){
+                      echo "● ". $nomesHabitos[$i] . '</br>';
+                    }
+
+                }
+              ?>
           </div>
           </div>
           

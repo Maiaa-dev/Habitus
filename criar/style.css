@@ -186,3 +186,8 @@ body{
     font-weight: bold;  
     font-family: 'Playwrite US Trad', sans-serif;
 }
+
+.parag{
+    font-size: 20px;
+    padding-left: 1%;
+}
