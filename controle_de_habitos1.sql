@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20/09/2025 às 21:16
+-- Tempo de geração: 22/09/2025 às 02:02
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -67,8 +67,43 @@ INSERT INTO `habitos` (`id_habito`, `nome_habito`) VALUES
 CREATE TABLE `habito_usuario` (
   `id_usuario` int(11) NOT NULL,
   `id_habito` int(11) NOT NULL,
-  `criado_em` timestamp NOT NULL DEFAULT current_timestamp()
+  `criado_em` timestamp NOT NULL DEFAULT current_timestamp(),
+  `id_meta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `habito_usuario`
+--
+
+INSERT INTO `habito_usuario` (`id_usuario`, `id_habito`, `criado_em`, `id_meta`) VALUES
+(13, 1, '2025-09-21 23:58:28', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `metas`
+--
+
+CREATE TABLE `metas` (
+  `id_meta` int(11) NOT NULL,
+  `nome_meta` varchar(200) NOT NULL,
+  `id_habito` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `metas`
+--
+
+INSERT INTO `metas` (`id_meta`, `nome_meta`, `id_habito`) VALUES
+(1, '1l', 1),
+(2, '2L', 1),
+(3, '2.5L', 1),
+(4, '15min', 2),
+(5, '20min', 2),
+(6, '30min', 2),
+(7, '30min', 3),
+(8, '35min', 3),
+(9, '40min', 3);
 
 -- --------------------------------------------------------
 
@@ -142,6 +177,14 @@ ALTER TABLE `habitos`
 --
 ALTER TABLE `habito_usuario`
   ADD KEY `id_usuario` (`id_usuario`),
+  ADD KEY `id_habito` (`id_habito`),
+  ADD KEY `id_meta` (`id_meta`);
+
+--
+-- Índices de tabela `metas`
+--
+ALTER TABLE `metas`
+  ADD PRIMARY KEY (`id_meta`),
   ADD KEY `id_habito` (`id_habito`);
 
 --
@@ -175,6 +218,12 @@ ALTER TABLE `habitos`
   MODIFY `id_habito` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT de tabela `metas`
+--
+ALTER TABLE `metas`
+  MODIFY `id_meta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT de tabela `tarefas`
 --
 ALTER TABLE `tarefas`
@@ -201,14 +250,13 @@ ALTER TABLE `execucoes_tarefas`
 -- Restrições para tabelas `habito_usuario`
 --
 ALTER TABLE `habito_usuario`
-  ADD CONSTRAINT `habito_usuario_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`),
-  ADD CONSTRAINT `habito_usuario_ibfk_2` FOREIGN KEY (`id_habito`) REFERENCES `habito` (`id_habito`);
+  ADD CONSTRAINT `id_meta` FOREIGN KEY (`id_meta`) REFERENCES `metas` (`id_meta`);
 
 --
--- Restrições para tabelas `tarefas`
+-- Restrições para tabelas `metas`
 --
-ALTER TABLE `tarefas`
-  ADD CONSTRAINT `tarefas_ibfk_1` FOREIGN KEY (`rotina_id`) REFERENCES `rotinas` (`id_rotina`) ON DELETE CASCADE;
+ALTER TABLE `metas`
+  ADD CONSTRAINT `metas_ibfk_1` FOREIGN KEY (`id_habito`) REFERENCES `habitos` (`id_habito`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
