@@ -88,6 +88,9 @@
                     }
 
                 }
+                else{
+                  echo 'Parece que você ainda não tem nenhum hábito!</br> O que acha de criar um?';
+                }
               ?>
           </div>
           </div>
