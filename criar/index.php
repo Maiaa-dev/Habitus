@@ -67,7 +67,7 @@
           <form action="primparte.php" method="post">
             <div id="escolhas" class="ativa d-grid gap-2">
               <div class="opcao">
-              <input type="radio" name="habito" value="hidratacao" class="btn-check" id="lgRadio1" autocomplete="off">
+              <input type="radio" name="habito" value="Hidratação" class="btn-check" id="lgRadio1" autocomplete="off">
               <label class="list-group-item list-group-item-action gap-2 align-items-center rounded-3" for="lgRadio1" role="button">
               <div>
                 <strong>Consumo de água</strong>
@@ -76,7 +76,7 @@
               </label>
               </div>
               <div class="opcao">
-              <input type="radio" name="habito" value="leitura" class="btn-check" id="lgRadio2" autocomplete="off">
+              <input type="radio" name="habito" value="Leitura" class="btn-check" id="lgRadio2" autocomplete="off">
               <label class="list-group-item list-group-item-action gap-2 align-items-center rounded-3" for="lgRadio2" role="button">
               <div>
                 <strong>Leitura</strong>
@@ -85,7 +85,7 @@
               </label>
               </div>
               <div class="opcao">
-              <input type="radio" name="habito" value="caminhada" class="btn-check" id="lgRadio3" autocomplete="off">
+              <input type="radio" name="habito" value="Caminhada" class="btn-check" id="lgRadio3" autocomplete="off">
               <label class="list-group-item list-group-item-action gap-2 align-items-center rounded-3" for="lgRadio3" role="button">
               <div>
                 <strong>Caminhada</strong>
@@ -95,7 +95,7 @@
               </div>
             </div><br>
         
-            <div id="div-hidratacao" class="inativa">
+            <div id="div-Hidratação" class="inativa">
               <div class="d-grid gap-2">
               <h1 class="tx1">Escolha uma <span class="novo">meta</span>:</h1>
               <div class="opcao">
@@ -128,7 +128,7 @@
               </div>
             </div>
 
-            <div id="div-leitura" class="inativa">
+            <div id="div-Leitura" class="inativa">
               <div class="d-grid gap-2">
               <h1 class="tx1">Escolha uma <span class="novo">meta</span>:</h1>
               <div class="opcao">
@@ -161,7 +161,7 @@
               </div>
             </div>
 
-            <div id="div-caminhada" class="inativa">
+            <div id="div-Caminhada" class="inativa">
               <div class="d-grid gap-2">
               <h1 class="tx1">Escolha uma <span class="novo">meta</span>:</h1>
               <div class="opcao">
@@ -198,6 +198,6 @@
         </div>
         </div>
     </div>
-    <script src="script.js" async></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
