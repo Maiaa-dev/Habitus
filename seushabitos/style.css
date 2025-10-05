@@ -88,3 +88,40 @@ body{
 #botao:hover #user2{
     display: block;
 }
+
+#tx1{
+    font-size: 30px;
+    color: #3906b3;
+    padding-left: 5%;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+#tx2,#tx3,#tx4{
+    font-size: 30px;
+    font-family: 'DM Sans',sans-serif;
+}
+
+#div-hidratacao:hover{
+    background-color: #0303ba;
+    color: white;
+    border-color: #0303ba;
+    transition: 0.5s;
+}
+
+#div-leitura:hover{
+    background-color: #a51335;
+    color: white;
+    border-color: #a51335;
+    transition: 0.5s;
+}
+
+#div-caminhada:hover{
+    background-color: #d15a04;
+    color: white;
+    border-color: #d15a04;
+    transition: 0.5s;
+}
+
+
+

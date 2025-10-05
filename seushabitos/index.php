@@ -11,8 +11,18 @@
     else{
         $nome = $_SESSION['nome'];
         $idUsuario = $_SESSION['id'];
-        $sql = "SELECT h.nome_habito FROM habitos h, habito_usuario hu WHERE h.id_habito=hu.id_habito and id_usuario = '$idUsuario'";
+        $sql = "SELECT h.id_habito FROM habitos h, habito_usuario hu WHERE h.id_habito=hu.id_habito and id_usuario = $idUsuario";
         $resultado = mysqli_query($conexao,$sql); //armazena o resultado da consulta anterior
+        if (mysqli_num_rows($resultado) > 0){
+          while($dados = mysqli_fetch_assoc($resultado)){
+                $idHabitos[] = $dados['id_habito']; //Armazena em uma array todos os hábitos(id)
+          }
+
+                /*$tamanhoHabitos = count($nomesHabitos);
+                for($i = 0; $i < $tamanhoHabitos;$i++){
+                      echo "● ". $nomesHabitos[$i] . '</br>';
+                }*/
+        }
     }
 ?>
 
@@ -25,6 +35,27 @@
     <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
     <script src="../bootstrap/js/bootstrap.js" async></script>
     <link href="style.css" rel="stylesheet">
+    <style>
+      #div-hidratacao,#div-leitura,#div-caminhada{
+        border: 4px solid black;
+        border-radius: 20px;
+        margin-top: 2%;
+        margin-left: 5%;
+        margin-right: 35%;
+        padding: 1.2%;
+        transition: 0.5s;
+      }
+      .inativo {
+        display: none; /* esconde completamente */
+      }    
+      #vazio{
+        font-family: 'DM Sans',sans-serif;
+        font-style: italic;
+        font-size: 25px;
+        color: #270a6b;
+        padding-left: 5%;
+      } 
+    </style>
 </head>
 <body>
     <div id="container">
@@ -40,7 +71,7 @@
                   <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav" id="tudo">
                       <li class="nav-item">
-                        <a class="nav-link active" id="comeco" href="#inicio">Início</a>
+                        <a class="nav-link active" id="comeco" href="../menu/index.php">Início</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="../criar/index.php">Criar novo hábito</a>
@@ -59,12 +90,17 @@
             </header>
         </div>
         <h1 id="tx1">Selecione um dos seus hábitos:</h1>
-        <div id="div-hidratacao" class="inativa">
+        <div id="vazio">
+          <?php 
+            if(empty($idHabitos)){
+              echo "...Parece que você ainda não tem nenhum!";
+            }
+          ?>
+        </div>
+        <div id="div-hidratacao" class="habito <?php echo in_array(1, $idHabitos) ? '' : 'inativo'; ?>">
           <h1 id="tx2">Hidratação</h1>
           <h3 class="meta">
             <?php 
-              
-
               $sql = "SELECT m.nome_meta FROM metas m, usuario u, habito_usuario hu, habitos h WHERE m.id_meta = hu.id_meta and u.id_usuario = hu.id_usuario and h.id_habito = hu.id_habito and hu.id_usuario = '$idUsuario' and hu.id_habito = 1";
               $resultado = mysqli_query($conexao,$sql); //armazena o resultado da consulta anterior
               if (mysqli_num_rows($resultado) == 0){
@@ -73,30 +109,48 @@
               else{
                 $dados = mysqli_fetch_assoc($resultado);
                 $nomeMeta = $dados['nome_meta'];
-                echo '$nomeMeta';
+                echo "$nomeMeta";
               }
             ?>
           </h3>
         </div>
-        <div id="div-leitura" class="inativa">
+        <div id="div-leitura" class="habito <?php echo in_array(2, $idHabitos) ? '' : 'inativo'; ?>">
           <h1 id="tx3">Leitura</h1>
           <h3 class="meta">
             <?php 
-              
+              $sql = "SELECT m.nome_meta FROM metas m, usuario u, habito_usuario hu, habitos h WHERE m.id_meta = hu.id_meta and u.id_usuario = hu.id_usuario and h.id_habito = hu.id_habito and hu.id_usuario = '$idUsuario' and hu.id_habito = 2";
+              $resultado = mysqli_query($conexao,$sql); //armazena o resultado da consulta anterior
+              if (mysqli_num_rows($resultado) == 0){
+                echo "Nenhuma meta! Ou seja, sem hábito!";
+              }
+              else{
+                $dados = mysqli_fetch_assoc($resultado);
+                $nomeMeta = $dados['nome_meta'];
+                echo "$nomeMeta";
+              }
             
             ?>
           </h3>
         </div>
-        <div id="div-caminhada" class="inativa">
+        <div id="div-caminhada" class="habito <?php echo in_array(3, $idHabitos) ? '' : 'inativo'; ?>">
           <h1 id="tx4">Caminhada</h1>
           <h3 class="meta">
             <?php 
-              
-            
+              $sql = "SELECT m.nome_meta FROM metas m, usuario u, habito_usuario hu, habitos h WHERE m.id_meta = hu.id_meta and u.id_usuario = hu.id_usuario and h.id_habito = hu.id_habito and hu.id_usuario = '$idUsuario' and hu.id_habito = 3";
+              $resultado = mysqli_query($conexao,$sql); //armazena o resultado da consulta anterior
+              if (mysqli_num_rows($resultado) == 0){
+                echo "Nenhuma meta! Ou seja, sem hábito!";
+              }
+              else{
+                $dados = mysqli_fetch_assoc($resultado);
+                $nomeMeta = $dados['nome_meta'];
+                echo "$nomeMeta";
+              }
             ?>
           </h3>
         </div>
-
+        </div>
+    </div>
     </div>
 </body>
 </html>

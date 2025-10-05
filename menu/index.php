@@ -45,7 +45,7 @@
                         <a class="nav-link" href="../criar/index.php">Criar novo hábito</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Seus hábitos</a>
+                        <a class="nav-link" href="../seushabitos/index.php">Seus hábitos</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#">Perguntas frequentes</a>
