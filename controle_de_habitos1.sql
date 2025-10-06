@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22/09/2025 às 02:02
+-- Tempo de geração: 06/10/2025 às 02:02
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -53,9 +53,9 @@ CREATE TABLE `habitos` (
 --
 
 INSERT INTO `habitos` (`id_habito`, `nome_habito`) VALUES
-(1, 'hidratacao'),
-(2, 'leitura'),
-(3, 'caminhada'),
+(1, 'Hidratação'),
+(2, 'Leitura'),
+(3, 'Caminhada'),
 (4, 'rotina do sono');
 
 -- --------------------------------------------------------
@@ -76,7 +76,10 @@ CREATE TABLE `habito_usuario` (
 --
 
 INSERT INTO `habito_usuario` (`id_usuario`, `id_habito`, `criado_em`, `id_meta`) VALUES
-(13, 1, '2025-09-21 23:58:28', 2);
+(13, 1, '2025-09-21 23:58:28', 2),
+(2, 2, '2025-10-05 19:17:24', 6),
+(2, 3, '2025-10-05 19:17:46', 7),
+(2, 1, '2025-10-05 21:05:27', 2);
 
 -- --------------------------------------------------------
 
@@ -104,6 +107,20 @@ INSERT INTO `metas` (`id_meta`, `nome_meta`, `id_habito`) VALUES
 (7, '30min', 3),
 (8, '35min', 3),
 (9, '40min', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `registros`
+--
+
+CREATE TABLE `registros` (
+  `id_registro` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_habito` int(20) NOT NULL,
+  `meta_alcancada` varchar(100) NOT NULL,
+  `data_feito` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -188,6 +205,14 @@ ALTER TABLE `metas`
   ADD KEY `id_habito` (`id_habito`);
 
 --
+-- Índices de tabela `registros`
+--
+ALTER TABLE `registros`
+  ADD PRIMARY KEY (`id_registro`),
+  ADD KEY `id_usuario` (`id_usuario`),
+  ADD KEY `id_habito` (`id_habito`);
+
+--
 -- Índices de tabela `tarefas`
 --
 ALTER TABLE `tarefas`
@@ -224,6 +249,12 @@ ALTER TABLE `metas`
   MODIFY `id_meta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT de tabela `registros`
+--
+ALTER TABLE `registros`
+  MODIFY `id_registro` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `tarefas`
 --
 ALTER TABLE `tarefas`
@@ -257,6 +288,13 @@ ALTER TABLE `habito_usuario`
 --
 ALTER TABLE `metas`
   ADD CONSTRAINT `metas_ibfk_1` FOREIGN KEY (`id_habito`) REFERENCES `habitos` (`id_habito`);
+
+--
+-- Restrições para tabelas `registros`
+--
+ALTER TABLE `registros`
+  ADD CONSTRAINT `registros_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`),
+  ADD CONSTRAINT `registros_ibfk_2` FOREIGN KEY (`id_habito`) REFERENCES `habitos` (`id_habito`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

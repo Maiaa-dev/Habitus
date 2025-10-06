@@ -74,7 +74,12 @@
             </h2>
         </div>
         <div id="segparte">
-          <br><br><br><br>
+          <h1 id="tx3">Seu desempenho nesse hábito está:</h1>
+          <div id="desem">
+            
+          </div>
+          <h1 id="tx4">Vamos entender o porquê?</h1>
+          <div id="motivos"></div>
         </div>
         <div id="terparte"></div>
         <div id="quarparte"></div>
