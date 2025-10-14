@@ -38,7 +38,7 @@
                   <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav" id="tudo">
                       <li class="nav-item">
-                        <a class="nav-link active" id="comeco" href="#inicio">Início</a>
+                        <a class="nav-link active" id="comeco" href="../menu/index.php">Início</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="../criar/index.php">Criar novo hábito</a>
@@ -68,7 +68,7 @@
                 else{
                     $dados = mysqli_fetch_assoc($resultado);
                     $nomeMeta = $dados['nome_meta'];
-                    echo "$nomeMeta";
+                    echo "$nomeMeta/dia";
                 }
             ?>
             </h2>
@@ -76,13 +76,92 @@
         <div id="segparte">
           <h1 id="tx3">Seu desempenho nesse hábito está:</h1>
           <div id="desem">
-            
+            <p>Colocar informação</p>
           </div>
+          <hr>
+          <br>
+          <div id="vamos">
           <h1 id="tx4">Vamos entender o porquê?</h1>
-          <div id="motivos"></div>
+          <div id="motivos">
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item">A list item</li>
+              <li class="list-group-item">A list item</li>
+              <li class="list-group-item">A list item</li>
+            </ol>
+          </div>
+          </div>
+        </div><br>
+        <div id="divisor"><span>💧 Beba água 💧 Beba água 💧 Beba água 💧 Beba água 💧 Beba água 💧 Beba água 💧 Beba água 💧 Beba água 💧 Beba água 💧 Beba água 💧 Beba água 💧 Beba água</span></div>
+        
+        <div id="terparte">
+          <h1 id="tx5">Seu desempenho essa semana:</h1>
+          <div id="desemp">
+            <div>
+              <canvas id="myChart"></canvas>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+            <script>
+              const ctx = document.getElementById('myChart');
+              new Chart(ctx, {
+                type: 'line', // 👈 tipo do gráfico
+                data: {
+                  labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+                  datasets: [{
+                    label: 'Temperatura Média (°C)',
+                    data: [22, 24, 27, 25, 20, 18],
+                    borderColor: 'rgba(75, 192, 192, 1)', // cor da linha
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // área sob a linha
+                    borderWidth: 2,
+                    tension: 0.4, // suaviza a linha (0 = reta, 1 = bem curva)
+                    fill: true,   // preenche o fundo da linha
+                    pointRadius: 2, // tamanho dos pontos
+                    pointBackgroundColor: 'rgba(75, 192, 192, 1)'
+                  }]
+                },
+                options: {
+                  responsive: true,
+                  maintainAspectRatio: true, // permite ajustar ao container
+                  scales: {
+                    y: {
+                      beginAtZero: true // começa do zero
+                    }
+                  }
+                }
+              });
+            </script>
+          </div>
         </div>
-        <div id="terparte"></div>
-        <div id="quarparte"></div>
+        <div class="quarparte">
+          <div class="esquerda">
+              <h1 id="tx6">Você já cumpriu:</h1>
+              <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 25%">25%</div>
+              </div>
+          </div>
+          <hr style="width: 1px; height: 300px; background-color: gray; transform: rotate(180deg);">
+
+          <div class="direita">
+              <h1 id="tx7">Quer fazer um novo registro?</h1>
+              <p id="pergunta">Então, quanto você acabou de consumir?</p>
+              <div id="resposta" class="row">
+              <form action="registro.php" method="post">
+              <select class="form-select" name="opcao">
+                <option selected>Selecione uma opção</option>
+                <option value="300ml">300 ml (0,3L)</option>
+                <option value="500ml">500 ml (0,5L)</option>
+                <option value="700ml">700 ml (0,7L)</option>
+                <option value="1000ml">1 L (1000 ml)</option>
+                <option value="1500ml">1,5 L (1500 ml)</option>
+                <option value="2000ml">2 L (2000 ml)</option>
+                <option value="2500ml">2.5 L (2500 ml)</option>
+              </select>
+              </div><br>
+              <button type="submit" id="botao" class="registrar">Registrar</button>
+            </form>
+        </div>
+        </div>
         <div id="quinparte"></div>
     </div>
 </body>

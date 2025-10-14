@@ -17,6 +17,7 @@
 
 body{
     font-family: 'Poppins', sans-serif;
+     overflow-x: hidden;
 }
 
 #logop{
@@ -47,7 +48,7 @@ body{
 }
 
 #botao{
-    color: #eee6f7;
+    color: #dfdfff;
     background-color: #042354;
     font-weight: bold;
     border: 4px solid #042354;
@@ -74,9 +75,9 @@ body{
 }
 
 #botao:hover{
-    color: #270a6b;
-    background-color: #eee6f7;
-    border-color: #eee6f7;
+    color: #042354;
+    background-color: #dfdfff;
+    border-color: #dfdfff;
     transition: 0.5s;
     display: inline-block;
     position: relative;
@@ -117,4 +118,90 @@ body{
 
 #segparte{
     background-color: white;
+}
+
+#tx3{
+    font-family: 'DM Sans',sans-serif;
+    color: #0750c5;
+    font-weight: bold;
+    padding-top: 3%;
+}
+
+#desem{
+    background-color: #88b0f2;
+    margin-right: 70%;
+    border: 3px solid #88b0f2;
+    border-radius: 20px;
+    padding: 1%;
+}
+
+#segparte{
+    padding-left: 5%;
+}
+
+#tx4{
+    color: white;
+    text-align: center;
+    font-style: italic;
+    font-family: 'DM Sans',sans-serif;
+}
+
+#vamos{
+    background-image: linear-gradient(to right, #000328,#00458e,#1874d6);
+    border: 2px solid white;
+    border-radius: 19px;
+    padding: 3%;
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+#motivos{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#divisor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+    padding-top: 0.5rem;
+}
+
+#divisor span{
+    background-color: #11489f; 
+    padding: 1%;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'DM Sans',sans-serif;
+    color: #ffffff;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+#tx5{
+    color: #000328;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 2%;
+}
+
+#desemp{
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 2%;
+}
+
+.quarparte{
+    margin-top: 10%;
+    display: flex;
+    gap: 20px;
+}
+
+.esquerda,.direita{
+    flex: 1;            
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
 }
