@@ -22,6 +22,6 @@
         }
     else{
         echo '<script>alert("Email ou senha incorretos. Tente novamente!");window.location.href = "index.html";</script>';
-            exit;
+        exit;
     }
 ?>

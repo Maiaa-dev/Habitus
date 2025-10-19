@@ -72,6 +72,10 @@
                 }
             ?>
             </h2>
+            <div id="opcoes">
+              <div id="botao1"><button type="submit"></button></div>]
+              
+            </div>
         </div>
         <div id="segparte">
           <h1 id="tx3">Seu desempenho nesse hábito está:</h1>
@@ -96,6 +100,7 @@
         <div id="terparte">
           <h1 id="tx5">Seu desempenho essa semana:</h1>
           <div id="desemp">
+              <!--Aqui entra o gráfico - Charts.js-->
             <div>
               <canvas id="myChart"></canvas>
             </div>
@@ -148,14 +153,13 @@
               <div id="resposta" class="row">
               <form action="registro.php" method="post">
               <select class="form-select" name="opcao">
-                <option selected>Selecione uma opção</option>
-                <option value="300ml">300 ml (0,3L)</option>
-                <option value="500ml">500 ml (0,5L)</option>
-                <option value="700ml">700 ml (0,7L)</option>
-                <option value="1000ml">1 L (1000 ml)</option>
-                <option value="1500ml">1,5 L (1500 ml)</option>
-                <option value="2000ml">2 L (2000 ml)</option>
-                <option value="2500ml">2.5 L (2500 ml)</option>
+                <option value="300">300 ml (0,3L)</option>
+                <option value="500">500 ml (0,5L)</option>
+                <option value="700">700 ml (0,7L)</option>
+                <option value="1000">1 L (1000 ml)</option>
+                <option value="1500">1,5 L (1500 ml)</option>
+                <option value="2000">2 L (2000 ml)</option>
+                <option value="2500">2.5 L (2500 ml)</option>
               </select>
               </div><br>
               <button type="submit" id="botao" class="registrar">Registrar</button>

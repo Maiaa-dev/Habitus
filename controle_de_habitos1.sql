@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/10/2025 às 02:02
+-- Tempo de geração: 19/10/2025 às 19:28
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -111,16 +111,27 @@ INSERT INTO `metas` (`id_meta`, `nome_meta`, `id_habito`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `registros`
+-- Estrutura para tabela `registros_hidratacao`
 --
 
-CREATE TABLE `registros` (
+CREATE TABLE `registros_hidratacao` (
   `id_registro` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `id_habito` int(20) NOT NULL,
-  `meta_alcancada` varchar(100) NOT NULL,
+  `id_meta` int(11) NOT NULL,
+  `meta_cumprida` varchar(100) NOT NULL,
   `data_feito` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `registros_hidratacao`
+--
+
+INSERT INTO `registros_hidratacao` (`id_registro`, `id_usuario`, `id_habito`, `id_meta`, `meta_cumprida`, `data_feito`) VALUES
+(1, 2, 1, 2, '1000', '2025-10-19 15:42:06'),
+(2, 2, 1, 2, '500', '2025-10-19 15:42:12'),
+(3, 2, 1, 2, '300', '2025-10-19 15:42:18'),
+(4, 2, 1, 2, '300', '2025-10-19 17:21:09');
 
 -- --------------------------------------------------------
 
@@ -205,12 +216,13 @@ ALTER TABLE `metas`
   ADD KEY `id_habito` (`id_habito`);
 
 --
--- Índices de tabela `registros`
+-- Índices de tabela `registros_hidratacao`
 --
-ALTER TABLE `registros`
+ALTER TABLE `registros_hidratacao`
   ADD PRIMARY KEY (`id_registro`),
   ADD KEY `id_usuario` (`id_usuario`),
-  ADD KEY `id_habito` (`id_habito`);
+  ADD KEY `id_habito` (`id_habito`),
+  ADD KEY `id_meta` (`id_meta`);
 
 --
 -- Índices de tabela `tarefas`
@@ -249,10 +261,10 @@ ALTER TABLE `metas`
   MODIFY `id_meta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT de tabela `registros`
+-- AUTO_INCREMENT de tabela `registros_hidratacao`
 --
-ALTER TABLE `registros`
-  MODIFY `id_registro` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `registros_hidratacao`
+  MODIFY `id_registro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `tarefas`
@@ -290,11 +302,12 @@ ALTER TABLE `metas`
   ADD CONSTRAINT `metas_ibfk_1` FOREIGN KEY (`id_habito`) REFERENCES `habitos` (`id_habito`);
 
 --
--- Restrições para tabelas `registros`
+-- Restrições para tabelas `registros_hidratacao`
 --
-ALTER TABLE `registros`
-  ADD CONSTRAINT `registros_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`),
-  ADD CONSTRAINT `registros_ibfk_2` FOREIGN KEY (`id_habito`) REFERENCES `habitos` (`id_habito`);
+ALTER TABLE `registros_hidratacao`
+  ADD CONSTRAINT `registros_hidratacao_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`),
+  ADD CONSTRAINT `registros_hidratacao_ibfk_2` FOREIGN KEY (`id_habito`) REFERENCES `habitos` (`id_habito`),
+  ADD CONSTRAINT `registros_hidratacao_ibfk_3` FOREIGN KEY (`id_meta`) REFERENCES `metas` (`id_meta`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
