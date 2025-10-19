@@ -72,9 +72,11 @@
                 }
             ?>
             </h2>
-            <div id="opcoes">
-              <div id="botao1"><button type="submit"></button></div>]
-              
+            <div id="juncao">
+            <div id="opcoes" class="row">
+              <div class="btt col"><button type="button" id="botao">Atualizar meta</button></div>
+              <div class="btt col"><button type="button" id="botao">Excluir hábito</button></div>
+            </div>
             </div>
         </div>
         <div id="segparte">

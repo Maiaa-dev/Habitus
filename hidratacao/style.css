@@ -205,3 +205,17 @@ body{
     text-align: center;
     font-size: 18px;
 }
+
+#opcoes{
+    background-color: #dfdfff;
+    border: 3px solid #dfdfff;
+    border-radius: 20px;
+    margin-right: 62%;
+    margin-left: 5%;
+    margin-top: 5%;
+    padding: 2%;
+}
+
+.btt{
+    font-size: 18px;
+}
