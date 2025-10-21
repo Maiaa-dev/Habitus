@@ -29,11 +29,13 @@
         //Pegando todos os registros do dia:
         $sql = "SELECT rh.meta_cumprida FROM registros_hidratacao rh, usuario u WHERE rh.id_usuario = u.id_usuario and rh.id_habito = 1 and DATE(data_feito) = CURDATE()";
         $resultado = mysqli_query($conexao,$sql);
+        $registroDia = [];
 
-        if (mysqli_query($conexao,$sql)){
+        if ($resultado && mysqli_num_rows($resultado) > 0){
             while($dados = mysqli_fetch_assoc($resultado)){
                 $registroDia[] = (int)$dados['meta_cumprida'];
             }
+        }
 
             $somaRegistro = array_sum($registroDia); //Somando todos os valores da array
 
@@ -53,6 +55,5 @@
             else{
                 echo "Você já bateu a meta!";
             }
-        }
     }
 ?>

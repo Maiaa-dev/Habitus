@@ -3,6 +3,7 @@
     include_once('../conexao.php');
     include_once('../usuario.php');
     include_once('../criar/primparte.php');
+    include_once('config.php');
 
      if (!isset ($_SESSION['email'])){
         header("Location: ../login/index.html");
