@@ -1,5 +1,4 @@
 <?php 
-    session_start();
     include_once('../conexao.php');
     include_once('../usuario.php');
     if (isset($_POST['habito']) && isset($_POST['meta'])) {

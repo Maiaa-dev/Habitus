@@ -1,8 +1,6 @@
 <?php 
-    session_start();
     include_once('../conexao.php');
     include_once('../usuario.php');
-    
 
     if (isset($_POST['opcao'])) {
         $metaCumprida = $_POST['opcao'];
@@ -19,7 +17,7 @@
         if($nomeMeta == '1L'){
             $nomeMeta = 1000;
         }
-        if($nomeMeta == '2L'){
+        else if($nomeMeta == '2L'){
             $nomeMeta = 2000;
         }
         else{
@@ -47,6 +45,7 @@
                 if (mysqli_query($conexao,$sql)){
                     mysqli_query($conexao, "SET FOREIGN_KEY_CHECKS = 1"); //reabilitar a verificação de chave estrangeira
                     echo "Deu tudo certo!";
+
                 }   
                 else{
                     echo "Erro ao registrar: " . mysqli_error($conexao);

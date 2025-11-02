@@ -1,9 +1,7 @@
 <?php 
-    session_start();
     include_once('../conexao.php');
     include_once('../usuario.php');
     include_once('../criar/primparte.php');
-    include_once('config.php');
 
      if (!isset ($_SESSION['email'])){
         header("Location: ../login/index.html");
@@ -12,6 +10,7 @@
     else{
         $nome = $_SESSION['nome'];
         $idUsuario = $_SESSION['id'];
+        global $percentual;
     }
 ?>
 
@@ -22,41 +21,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hidratação 💧</title>
     <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
-    <script src="../bootstrap/js/bootstrap.js" async></script>
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
     <div id="container">
         <div id="inicio">   
-        <header>
-            <nav class="navbar fixed-top navbar-expand-lg bg-body-transparent">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.php"><img src="../imagens/logo4.png" id="logop" alt="Logo"></a>
-                 
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav" id="tudo">
-                      <li class="nav-item">
-                        <a class="nav-link active" id="comeco" href="../menu/index.php">Início</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="../criar/index.php">Criar novo hábito</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="../seushabitos/index.php">Seus hábitos</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Perguntas frequentes</a>
-                      </li>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #042354;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="../imagens/logo4.png" id="logop"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item me-4">
+                    <a class="nav-link active text-white FonteLink" aria-current="page" href="../menu/index.php">Início</a>
+                    </li>
+                    <li class="nav-item me-4">
+                    <a class="nav-link text-white FonteLink" href="../criar/index.php">Criar novo hábito</a>
+                    </li>
+                    <li class="nav-item me-4">
+                    <a class="nav-link text-white FonteLink" href="../seushabitos/index.php">Seus hábitos</a>
+                    </li>
+                    <li class="nav-item me-5">
+                    <a class="nav-link text-white FonteLink" href="#">Perguntas frequentes</a>
+                    </li>
+                    <li class="nav-item dropdown me-5">
+                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <?php echo "$nome"?>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Meu perfil</a></li>
+                        <li><a class="dropdown-item" href="../login/index.html">Sair</a></li>
                     </ul>
-                      <a class="nav-link" href="#"><button type="submit" id="botao" class="dados"><img src="../imagens/user2.png" id="user1"><img src="../imagens/user.png" id="user2">   <?php echo $nome?></button></a>
-                  </div>
+                    </li>
+                </ul>
                 </div>
-              </nav>
-            </header>
+            </div>
+        </nav>
         </div>
+
         <div id="primparte">
             <h1 id="tx1">hidratação</h1>
             <h2 id="tx2">Meta: 
@@ -74,16 +78,16 @@
             ?>
             </h2>
             <div id="juncao">
-            <div id="opcoes" class="row">
-              <div class="btt col"><button type="button" id="botao">Atualizar meta</button></div>
-              <div class="btt col"><button type="button" id="botao">Excluir hábito</button></div>
+            <div id="opcoes" class="row"> 
+              <div class="btt col"><form action="atualizar.php" method="post" id="formAtualizar"><input type="hidden" name="novaMeta" id="novaMeta"><button type="submit" id="botao" class="botaoAtualizar" onclick="atualizar()">Atualizar meta</button></form></div>
+              <div class="btt col"><form action="excluir.php" method="post" onsubmit="return confirmar()"><button type="submit" id="botao">Excluir hábito</button></form></div>
             </div>
             </div>
         </div>
         <div id="segparte">
           <h1 id="tx3">Seu desempenho nesse hábito está:</h1>
           <div id="desem">
-            <p>Colocar informação</p>
+            <p><?php echo "$percentual"?></p>
           </div>
           <hr>
           <br>
@@ -171,5 +175,28 @@
         </div>
         <div id="quinparte"></div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+    <script>
+      function confirmar(){
+        return confirm("Tem certeza que deseja excluir este hábito? Essa ação não poderá mais ser desfeita! Pense bem, não desista :)");
+      }
+
+      function atualizar(){
+          const form = document.getElementById('formAtualizar');
+          const inputMeta = document.getElementById('novaMeta');
+
+          const valor = prompt("Digite a nova meta (lembre-se: 1L, 2L ou 2.5L - Escrever exatamente neste formato):");
+
+          if(valor !== null && (valor == "1L" || valor == "2L" || valor == "2.5L")){
+              inputMeta.value = valor;
+              form.submit();  
+          }
+          else {
+              alert("Atualização cancelada.");
+          }   
+      }
+    </script>
+
 </body>
 </html>
