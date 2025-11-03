@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+US+Trad:wght@100..400&display=swap');
+/*Font: Playwrite US Trad*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+/*Font: DM Sans*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*Font: Poppins*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background-image: linear-gradient(to bottom,#ffffff,#d5c9f6,#4200ff);
+    background-repeat: no-repeat;
+    height: 100vh; 
+    background-size: cover;
+}
+
+#logop{
+    height: 70px;
+    width: auto;
+    padding-left: 2%;
+    /*tamanho da minha logo na pÃ¡gina principal*/
+}
+
+.FonteLink{
+    font-family: 'Poppins',sans-serif;
+}
+
+.nav-link{
+    font-size: 15px;
+}
+
+#tudo{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#tx1{
+    font-family: 'DM Sans',sans-serif;
+    margin-left: 5%;
+    margin-top: 2%;
+    color: #4200ff;
+    font-size: 50px;
+}
+
+#botao{
+    color: #ebeaff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    background-color: #2a23e0;
+    border: 4px solid #2a23e0;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-left: 42%;
+}
+
+#botao:hover{
+    color: #270a6b;
+    background-color: #eee6f7;
+    border-color: #eee6f7;
+    transition: 0.5s;
+}
+
+#formEx{
+    margin-top: 5%;
+}

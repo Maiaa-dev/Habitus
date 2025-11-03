@@ -51,7 +51,7 @@
                         <?php echo "$nome"?>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Meu perfil</a></li>
+                        <li><a class="dropdown-item" href="../perfil/index.php">Meu perfil</a></li>
                         <li><a class="dropdown-item" href="../login/index.html">Sair</a></li>
                     </ul>
                     </li>
