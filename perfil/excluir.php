@@ -5,7 +5,7 @@
     $idUsuario = $_SESSION['id'];
     $idHabito = 1;
 
-    $sql = "DELETE FROM usuario WHERE id_usuario = '$idUsuario'";
+    $sql = "UPDATE usuario SET status_conta = 'inativo' WHERE id_usuario = '$idUsuario'";
     $resultado = mysqli_query($conexao,$sql);
 
     if ($resultado){

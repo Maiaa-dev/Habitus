@@ -115,7 +115,7 @@
           </h3>
         </div>
         <div id="div-leitura" class="habito <?php echo in_array(2, $idHabitos) ? '' : 'inativo'; ?>">
-          <h1 id="tx3">Leitura</h1>
+          <h1 id="tx3"><a href="../leitura/index.php">Leitura</a></h1>
           <h3 class="meta">
             <?php 
               $sql = "SELECT m.nome_meta FROM metas m, usuario u, habito_usuario hu, habitos h WHERE m.id_meta = hu.id_meta and u.id_usuario = hu.id_usuario and h.id_habito = hu.id_habito and hu.id_usuario = '$idUsuario' and hu.id_habito = 2";

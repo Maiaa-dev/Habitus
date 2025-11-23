@@ -16,10 +16,10 @@
 body{
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
-    background-image: linear-gradient(to bottom,#ffffff,#d5c9f6,#4200ff);
+    /*background-image: linear-gradient(to bottom,#ffffff,#d5c9f6,#4200ff);
     background-repeat: no-repeat;
     height: 100vh; 
-    background-size: cover;
+    background-size: cover;*/
 }
 
 #logop{
@@ -62,7 +62,7 @@ body{
     padding-right: 10px;
     padding-top: 3px;
     padding-bottom: 3px;
-    margin-left: 42%;
+    margin-left: 5%;
 }
 
 #botao:hover{
@@ -74,4 +74,111 @@ body{
 
 #formEx{
     margin-top: 5%;
+}
+
+.principal{
+    margin-top: 5%;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 5%;
+    align-items: flex-start;
+}
+
+.esquerda,.direita{            
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.direita{
+    flex: 1;
+}
+
+.esquerda{
+    width: 450px; /* você pode ajustar esse valor */
+    border: 3px solid #4200ff;
+    border-radius: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: left; 
+    display: block;
+}
+
+#p1{
+    text-align: center;
+    color: #4200ff;
+}
+
+.dados{
+    margin-left: 5%;
+    margin-right: 10%;
+}
+
+.inativa{
+    display: grid;
+    gap: .5rem;
+    display: none;
+    padding-bottom: 10%;
+}
+
+#radiosList{
+    text-align: center;
+    padding-top: 10%;
+}
+
+#escolhas{
+    align-items: center !important;
+    font-size: 20px !important;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.rounded-3{
+    border-radius: .5rem !important;
+}
+
+.opcao{
+    background-color: #3906b3;
+    padding:1%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+}
+
+#criarbt{
+    color: #eee6f7;
+    font-size: 20px;
+    background-color: #270a6b;
+    font-weight: bold;
+    border: 4px solid #270a6b;
+    border-radius: 20px;
+    transition: 0.5s;
+    display: flex;
+    padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+#pcriar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#criarbt:hover{
+    background-color: #4a05ed;
+    border-color: #4a05ed;
+    transition: 0.5s;
+    position: relative;
+    display: flex;
 }
