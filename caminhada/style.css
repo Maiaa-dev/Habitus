@@ -32,26 +32,26 @@ body{
 }
 
 #comeco,.nav-link{
-    color: #f2defd;
+    color: #fef7e9;
     transition: 0.5s;
     font-size: 15px;
 }
 
 #comeco:hover,.nav-link:hover{
-    color: #8372f8;
+    color: #f9e3ce;
     transition: 0.5s;
 }
 
 .navbar{
-    background-color: #690a20ff;
+    background-color: #ab4700ff;
     height: 11%;
 }
 
 #botao{
-    color: #dfdfff;
-    background-color: #4d0818;
+    color: #faf1e8;
+    background-color: #7a3403;
     font-weight: bold;
-    border: 4px solid #4d0818;
+    border: 4px solid #7a3403;
     border-radius: 20px;
     transition: 0.5s;
     padding-right: 10px;
@@ -75,9 +75,9 @@ body{
 }
 
 #botao:hover{
-    color: #75142b;
-    background-color: #dfdfff;
-    border-color: #dfdfff;
+    color: #ab4700ff;
+    background-color: #faf1e8;
+    border-color: #faf1e8;
     transition: 0.5s;
     display: inline-block;
     position: relative;
@@ -109,7 +109,7 @@ body{
 }
 
 #primparte{
-    background-image: url(../imagens/fundoLei.png);
+    background-image: url(../imagens/fundoCami.png);
     background-size: cover;
     background-repeat: no-repeat;
     padding-bottom: 20%;
@@ -122,15 +122,15 @@ body{
 
 #tx3{
     font-family: 'DM Sans',sans-serif;
-    color: #a11d3c;
+    color: #cc5d0d;
     font-weight: bold;
     padding-top: 3%;
 }
 
 #desem{
-    background-color: #cd647c;
+    background-color: #ee8840;
     margin-right: 70%;
-    border: 3px solid #cd647c;
+    border: 3px solid #ee8840;
     border-radius: 20px;
     padding: 1%;
 }
@@ -147,7 +147,7 @@ body{
 }
 
 #vamos{
-    background-image: linear-gradient(to right, #4d0818,#a11d3c,#cd647c);
+    background-image: linear-gradient(to right, #7a3403,#cc5d0d,#ee8840);
     border: 2px solid white;
     border-radius: 19px;
     padding: 3%;
@@ -169,7 +169,7 @@ body{
 }
 
 #divisor span{
-    background-color: #a11d3c; 
+    background-color: #ce5b08; 
     padding: 1%;
     font-size: 25px;
     font-style: italic;
@@ -180,7 +180,7 @@ body{
 }
 
 #tx5{
-    color: #75142b;
+    color: #9b4405;
     text-align: center;
     font-weight: bold;
     padding-top: 2%;
@@ -207,8 +207,8 @@ body{
 }
 
 #opcoes{
-    background-color: #dfdfff;
-    border: 3px solid #dfdfff;
+    background-color: #faf1e8;
+    border: 3px solid #faf1e8;
     border-radius: 20px;
     margin-right: 62%;
     margin-left: 5%;

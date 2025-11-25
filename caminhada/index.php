@@ -19,14 +19,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leitura 📕</title>
+    <title>Caminhada 🚶‍➡️</title>
     <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
     <div id="container">
         <div id="inicio">   
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #690a20ff;">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #ab4700ff;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"><img src="../imagens/logo4.png" id="logop"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +44,7 @@
                     <a class="nav-link text-white FonteLink" href="../seushabitos/index.php">Seus hábitos</a>
                     </li>
                     <li class="nav-item me-5">
-                    <a class="nav-link text-white FonteLink" href="../perguntas/index.php">Perguntas frequentes</a>
+                    <a class="nav-link text-white FonteLink" href="#">Perguntas frequentes</a>
                     </li>
                     <li class="nav-item dropdown me-5">
                     <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,10 +62,10 @@
         </div>
 
         <div id="primparte">
-            <h1 id="tx1">leitura</h1>
+            <h1 id="tx1">caminhada</h1>
             <h2 id="tx2">Meta: 
                 <?php 
-                $sql = "SELECT m.nome_meta FROM metas m, usuario u, habito_usuario hu, habitos h WHERE m.id_meta = hu.id_meta and u.id_usuario = hu.id_usuario and h.id_habito = hu.id_habito and hu.id_usuario = '$idUsuario' and hu.id_habito = 2";
+                $sql = "SELECT m.nome_meta FROM metas m, usuario u, habito_usuario hu, habitos h WHERE m.id_meta = hu.id_meta and u.id_usuario = hu.id_usuario and h.id_habito = hu.id_habito and hu.id_usuario = '$idUsuario' and hu.id_habito = 3";
                 $resultado = mysqli_query($conexao,$sql); //armazena o resultado da consulta anterior
                 if (mysqli_num_rows($resultado) == 0){
                     echo "Nenhuma meta! Ou seja, sem hábito!";
@@ -102,7 +102,7 @@
           </div>
           </div>
         </div><br>
-        <div id="divisor"><span>📕 Leia um livro 📕 Leia um livro 📕 Leia um livro 📕 Leia um livro 📕 Leia um livro 📕 Leia um livro 📕 Leia um livro 📕 Leia um livro 📕 Leia um livro 📕 Leia um livro 📕 Leia um livro 📕 Leia um livro</span></div>
+        <div id="divisor"><span>🚶‍➡️ Um passo de cada vez 🚶‍➡️ Um passo de cada vez 🚶‍➡️ Um passo de cada vez 🚶‍➡️ Um passo de cada vez 🚶‍➡️ Um passo de cada vez 🚶‍➡️ Um passo de cada vez 🚶‍➡️ Um passo de cada vez 🚶‍➡️ Um passo de cada vez 🚶‍➡️ Um passo de cada vez 🚶‍➡️ Um passo de cada vez 🚶‍➡️ Um passo de cada vez 🚶‍➡️ Um passo de cada vez</span></div>
         
         <div id="terparte">
           <h1 id="tx5">Seu desempenho essa semana:</h1>
@@ -156,16 +156,17 @@
 
           <div class="direita">
               <h1 id="tx7">Quer fazer um novo registro?</h1>
-              <p id="pergunta">Então, quantos minutos você já passou lendo?</p>
+              <p id="pergunta">Então, quantos minutos você já caminhou?</p>
               <div id="resposta" class="row">
               <form action="registro.php" method="post">
               <select class="form-select" name="opcao">
-                <option value="5">5 min</option>
                 <option value="10">10 min</option>
                 <option value="15">15 min</option>
                 <option value="20">20 min</option>
                 <option value="25">25 min</option>
                 <option value="30">30 min</option>
+                <option value="35">35 min</option>
+                <option value="40">40 min</option>
               </select>
               </div><br>
               <button type="submit" id="botao" class="registrar">Registrar</button>
@@ -185,9 +186,9 @@
           const form = document.getElementById('formAtualizar');
           const inputMeta = document.getElementById('novaMeta');
 
-          const valor = prompt("Digite a nova meta (lembre-se: 15min, 20min ou 30min - Escrever exatamente neste formato):");
+          const valor = prompt("Digite a nova meta (lembre-se: 30min, 35min ou 40min - Escrever exatamente neste formato):");
 
-          if(valor !== null && (valor == "15min" || valor == "20min" || valor == "30min")){
+          if(valor !== null && (valor == "30min" || valor == "35min" || valor == "40min")){
               inputMeta.value = valor;
               form.submit();  
           }
