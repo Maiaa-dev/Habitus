@@ -1,8 +1,8 @@
 <?php 
-    session_start();
     include_once('../conexao.php');
     include_once('../usuario.php');
     include_once('../criar/primparte.php');
+
 
      if (!isset ($_SESSION['email'])){
         header("Location: ../login/index.html");
@@ -28,34 +28,39 @@
 <body>
     <div id="container">
         <div id="inicio">   
-        <header>
-            <nav class="navbar fixed-top navbar-expand-lg bg-body-transparent">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.php"><img src="../imagens/logo4.png" id="logop" alt="Logo"></a>
-                 
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav" id="tudo">
-                      <li class="nav-item">
-                        <a class="nav-link active" id="comeco" href="#inicio">Início</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="../criar/index.php">Criar novo hábito</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="../seushabitos/index.php">Seus hábitos</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Perguntas frequentes</a>
-                      </li>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="../imagens/logo4.png" id="logop"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item me-4">
+                    <a class="nav-link active text-white FonteLink" aria-current="page" href="../menu/index.php">Início</a>
+                    </li>
+                    <li class="nav-item me-4">
+                    <a class="nav-link text-white FonteLink" href="../criar/index.php">Criar novo hábito</a>
+                    </li>
+                    <li class="nav-item me-4">
+                    <a class="nav-link text-white FonteLink" href="../seushabitos/index.php">Seus hábitos</a>
+                    </li>
+                    <li class="nav-item me-5">
+                    <a class="nav-link text-white FonteLink" href="../perguntas/index.php">Perguntas frequentes</a>
+                    </li>
+                    <li class="nav-item dropdown me-5">
+                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <?php echo "$nome"?>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="../perfil/index.php">Meu perfil</a></li>
+                        <li><a class="dropdown-item" href="../login/index.html">Sair</a></li>
                     </ul>
-                      <a class="nav-link" href="#"><button type="submit" id="botao" class="dados"><img src="../imagens/user2.png" id="user1"><img src="../imagens/user.png" id="user2">   <?php echo $nome?></button></a>
-                  </div>
+                    </li>
+                </ul>
                 </div>
-              </nav>
-            </header>
+            </div>
+        </nav>
         </div>
 
         <div id="principal">
@@ -97,5 +102,6 @@
           
 
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

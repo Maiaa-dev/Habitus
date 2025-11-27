@@ -219,3 +219,16 @@ body{
 .btt{
     font-size: 18px;
 }
+
+.mensagem{
+    font-size: 20px;
+}
+
+#quinparte{
+    background-color: #4d0818;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: 2px solid #4d0818;
+    border-radius: 20px;
+    padding-bottom: 2%;
+}

@@ -1,6 +1,7 @@
 <?php 
     include_once('../usuario.php');
     include_once('../conexao.php');
+    include_once('../alert.php');   
 
     if (isset($_POST['novaMeta'])) {
         $novaMeta = $_POST['novaMeta'];
@@ -15,7 +16,8 @@
         $nomeMeta = $dados['nome_meta'];
 
         if($novaMeta == $nomeMeta){
-            echo '<script>alert("Nenhuma atualização foi feita!");window.location.href = "index.php";</script>';
+            exibirAlerta("error", "Ops...!", "Nenhuma alteração foi feita, pois a meta selecionada é igual à atual.");
+            header("Location: index.php");
             exit;
         }
         else{
@@ -30,19 +32,21 @@
                 $resultado = mysqli_query($conexao,$sql); //armazena o resultado da consulta anterior
 
                 if($resultado){
-                    echo '<script>alert("Meta atualizada! :)");window.location.href = "index.php";</script>';
+                    exibirAlerta("success", "Tudo certo!", "Sua meta foi atualizada com sucesso :)");
+                    header("Location: index.php");
                     exit;
                 }
                 else{
-                    echo '<script>alert("Não foi possível atualizar a meta!");window.location.href = "index.php";</script>';
+                    exibirAlerta("error", "Ops...!", "Houve um erro ao atualizar sua meta. Tente novamente mais tarde.");
+                    header("Location: index.php");
                     exit;
                 }
 
             }
         }
     }
-    else{
-        echo 'window.location.href = "index.php";</script>';
+    else if (!isset($_POST['novaMeta'])){
+        header("Location: index.php");
         exit;
     }
 ?>

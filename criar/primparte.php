@@ -1,6 +1,7 @@
 <?php 
     include_once('../conexao.php');
     include_once('../usuario.php');
+    include_once('../alert.php');
     if (isset($_POST['habito']) && isset($_POST['meta'])) {
         $habitoescolhido = $_POST['habito'];
         $metaescolhida = $_POST['meta'];
@@ -18,17 +19,20 @@
             $resultado = mysqli_query($conexao,$sql); //armazena o resultado da consulta anterior
 
             if (mysqli_num_rows($resultado) > 0){
-                echo "Parece que você já tem esse hábito! Que tal criar um novo?";
+                exibirAlerta("question", "Ops...", "Parece que você já tem esse hábito! O que acha de criar um novo?");
+                header("Location: index.php");
             }
             else{
                 mysqli_query($conexao, "SET FOREIGN_KEY_CHECKS = 0"); //desabilitar a verificação de chave estrangeira
                 $sql = "INSERT INTO habito_usuario (id_usuario,id_habito,id_meta) VALUES ('$idUsuario','$idHabito','$idMeta')";
                 if (mysqli_query($conexao,$sql)){
                     mysqli_query($conexao, "SET FOREIGN_KEY_CHECKS = 1"); //reabilitar a verificação de chave estrangeira
-                    echo "Deu tudo certo!";
+                    exibirAlerta("success", "Sucesso!", "Hábito cadastrado com sucesso.");
+                    header("Location: index.php");
                 }   
                 else{
-                    echo "Erro ao cadastrar: " . mysqli_error($conexao);
+                    exibirAlerta("error", "Ops...!", "Houve um erro ao cadastrar. Tente novamente mais tarde.");
+                    header("Location: index.php");
                 }
 
         }}

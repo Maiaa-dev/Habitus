@@ -163,3 +163,17 @@ body{
     border-radius: 20px;
     padding: 2%;
 }
+
+@media screen and (max-width: 767px){
+    .divisao{
+        height: 4px;
+        width: 455px;
+        transform: none;
+    }
+    .principal{
+        flex-direction: column;
+        height: 4px;
+        width: 455px;
+        transform: none;
+    }
+}

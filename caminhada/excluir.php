@@ -1,6 +1,7 @@
 <?php 
     include_once('../usuario.php');
     include_once('../conexao.php');
+    include_once('../alert.php');
 
     $idUsuario = $_SESSION['id'];
     $idHabito = 3;
@@ -9,11 +10,13 @@
     $resultado = mysqli_query($conexao,$sql);
 
     if ($resultado){
-        echo '<script>alert("Hábito excluido!");window.location.href = "../menu/index.php";</script>';
+        exibirAlerta("success", "Hábito excluido!", "Se quiser retomar o hábito, basta adicioná-lo novamente em 'Criar hábito'");
+        header("Location: ../menu/index.php");
         exit;
     }
     else{
-        echo '<script>alert("Não foi possível excluir!");window.location.href = "index.php";</script>';
+        exibirAlerta("error", "Ops...!", "Houve um erro ao excluir o hábito. Tente novamente mais tarde.");
+        header("Location: index.php");
         exit;
     }
 ?>
