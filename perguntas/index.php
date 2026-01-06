@@ -22,6 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perguntas frequentes</title>
     <link href="style.css" rel="stylesheet">
+    <link href="../system/navbar.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
@@ -47,7 +48,7 @@
                     <a class="nav-link text-white FonteLink" href="../perguntas/index.php">Perguntas frequentes</a>
                     </li>
                     <li class="nav-item dropdown me-5">
-                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-white FonteLink" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <?php echo "$nome"?>
                     </a>
                     <ul class="dropdown-menu">

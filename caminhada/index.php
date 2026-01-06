@@ -102,6 +102,7 @@
     <title>Caminhada 🚶‍➡️</title>
     <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <link href="../system/navbar.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>

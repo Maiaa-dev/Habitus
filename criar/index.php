@@ -20,6 +20,7 @@
     <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
     <script src="../bootstrap/js/bootstrap.js" async></script>
     <link href="style.css" rel="stylesheet">
+    <link href="../system/navbar.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
     /* pequeno ajuste para que o label mostre exatamente o estilo ativo do exemplo */

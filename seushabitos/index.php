@@ -34,6 +34,7 @@
     <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
     <script src="../bootstrap/js/bootstrap.js" async></script>
     <link href="style.css" rel="stylesheet">
+    <link href="../system/navbar.css" rel="stylesheet">
     <style>
       #div-hidratacao,#div-leitura,#div-caminhada{
         border: 4px solid black;
