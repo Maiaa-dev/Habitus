@@ -131,7 +131,7 @@
                     <a class="nav-link text-white FonteLink" href="../seushabitos/index.php">Seus hábitos</a>
                     </li>
                     <li class="nav-item me-5">
-                    <a class="nav-link text-white FonteLink" href="#">Perguntas frequentes</a>
+                    <a class="nav-link text-white FonteLink" href="../perguntas/index.php">Perguntas frequentes</a>
                     </li>
                     <li class="nav-item dropdown me-5">
                     <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -177,10 +177,10 @@
             <p class="text-white mensagem">
               <?php 
                 if ($percentual_formatado >= 100) {
-                    echo "Excelente! Você já atingiu sua meta diária de caminhada. Continue assim!";
+                    echo "Excelente! Você já atingiu sua meta diária de hidratação. Continue assim!";
                 } 
                 else if ($percentual_formatado >= 70) {
-                    echo "Muito bom! Você está quase lá, continue caminhando para alcançar sua meta diária!";
+                    echo "Muito bom! Você está quase lá, continue se hidratando para alcançar sua meta diária!";
                 } 
                 else if ($percentual_formatado >= 40) {
                     echo "Bom esforço! Você está no caminho certo, não desista!";

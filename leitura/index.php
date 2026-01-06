@@ -173,16 +173,16 @@
             <p class="text-white mensagem">
               <?php 
                 if ($percentual_formatado >= 100) {
-                    echo "Excelente! Você já atingiu sua meta diária de caminhada. Continue assim!";
+                    echo "Excelente! Você já atingiu sua meta diária de leitura. Continue assim!";
                 } 
                 else if ($percentual_formatado >= 70) {
-                    echo "Muito bom! Você está quase lá, continue caminhando para alcançar sua meta diária!";
+                    echo "Muito bom! Você está quase lá, continue lendo para alcançar sua meta diária!";
                 } 
                 else if ($percentual_formatado >= 40) {
                     echo "Bom esforço! Você está no caminho certo, não desista!";
                 } 
                 else {
-                    echo "Vamos lá! Parece que você não caminhou muito hoje. Que tal dar uma volta para alcançar sua meta diária?";
+                    echo "Vamos lá! Parece que você não leu muito hoje. Que tal ler um pouco para alcançar sua meta diária?";
                 }
               ?>
             </p>

@@ -126,7 +126,7 @@
                     <a class="nav-link text-white FonteLink" href="../seushabitos/index.php">Seus hábitos</a>
                     </li>
                     <li class="nav-item me-5">
-                    <a class="nav-link text-white FonteLink" href="#">Perguntas frequentes</a>
+                    <a class="nav-link text-white FonteLink" href="../perguntas/index.php">Perguntas frequentes</a>
                     </li>
                     <li class="nav-item dropdown me-5">
                     <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
